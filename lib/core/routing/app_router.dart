@@ -13,7 +13,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => const LoginScreen());
       default:
         return MaterialPageRoute(
-            builder: (_) => Scaffold(
+            builder: (context) => Scaffold(
                   body: Center(
                     child: Text("No Screen Found ${settings.name}"),
                   ),
