@@ -14,8 +14,11 @@ class DoctorimageAndTextWidget extends StatelessWidget {
             foregroundDecoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
-                    end: Alignment.center,
-                    colors: [Colors.white, Colors.white.withOpacity(0.0)])),
+                    end: Alignment.topCenter,
+                    colors: [
+                  Colors.white,
+                  Colors.white.withOpacity(0.0),
+                ])),
             child: Image.asset("assets/images/doctor.png")),
         Positioned(
             left: 0,

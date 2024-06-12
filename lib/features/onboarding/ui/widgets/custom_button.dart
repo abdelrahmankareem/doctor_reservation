@@ -12,6 +12,7 @@ class CustomGetStartButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
