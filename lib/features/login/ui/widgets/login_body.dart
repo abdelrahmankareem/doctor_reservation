@@ -1,23 +1,20 @@
 import 'package:doctor/core/theming/styles.dart';
-import 'package:doctor/core/widgets/app_text_form_field.dart';
+
+import 'package:doctor/features/login/manager/cubit/login_cubit.dart';
+import 'package:doctor/features/login/ui/widgets/email_and_password.dart';
+import 'package:doctor/features/login/ui/widgets/login_cubit_listner.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/widgets/custom_text_button.dart';
 import 'rich_text_conditins_terms.dart';
 import 'rich_text_dont_have_account.dart';
 
-class LoginBody extends StatefulWidget {
+class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
 
-  @override
-  State<LoginBody> createState() => _LoginBodyState();
-}
-
-class _LoginBodyState extends State<LoginBody> {
-  final formKey = GlobalKey<FormState>();
-  bool isObscureText = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -41,62 +38,49 @@ class _LoginBodyState extends State<LoginBody> {
               SizedBox(
                 height: 36.h,
               ),
-              Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    const DocTextFormField(hintText: "Email"),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    DocTextFormField(
-                      hintText: "Enter your password",
-                      isObscureText: isObscureText,
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(
-                            () {
-                              isObscureText = !isObscureText;
-                            },
-                          );
-                        },
-                        child: Icon(isObscureText
-                            ? Icons.visibility_off
-                            : Icons.visibility),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 24.h,
-                    ),
-                    Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: Text(
-                          "Forget Password",
-                          style: TextStyles.font12Blue400Weight,
-                        )),
-                    SizedBox(
-                      height: 40.h,
-                    ),
-                    AppTextButton(
-                      buttonText: 'Login',
-                      textStyle: TextStyles.font16Whit600Weight,
-                      onPressed: () {},
-                    ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    const ConditionsRichText(),
-                    SizedBox(
-                      height: 60.h,
-                    ),
-                    const DontHaveAccountRichText()
-                  ],
-                ),
+              Column(
+                children: [
+                  const EmailAndPassword(),
+                  SizedBox(
+                    height: 24.h,
+                  ),
+                  Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Text(
+                        "Forget Password",
+                        style: TextStyles.font12Blue400Weight,
+                      )),
+                  SizedBox(
+                    height: 40.h,
+                  ),
+                  AppTextButton(
+                    buttonText: 'Login',
+                    textStyle: TextStyles.font16Whit600Weight,
+                    onPressed: () {
+                      validateThenLogin(context);
+                    },
+                  ),
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  const ConditionsRichText(),
+                  SizedBox(
+                    height: 60.h,
+                  ),
+                  const DontHaveAccountRichText(),
+                  const LoginCubitListener(),
+                ],
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void validateThenLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().LoginUser();
+    }
   }
 }

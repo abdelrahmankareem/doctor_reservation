@@ -16,6 +16,7 @@ class DocTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.backgroundColor,
     this.controller,
+    required this.validator,
   });
 
   final EdgeInsetsGeometry? contentPadding;
@@ -28,10 +29,16 @@ class DocTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Color? backgroundColor;
   final TextEditingController? controller;
+  final Function(String?) validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: (value) {
+        validator(value);
+        return null;
+      },
       style: TextStyles.font14DarkBlue500Weight,
       obscureText: isObscureText ?? false,
       decoration: InputDecoration(
@@ -55,6 +62,14 @@ class DocTextFormField extends StatelessWidget {
             OutlineInputBorder(
                 borderSide:
                     const BorderSide(color: AppColors.lighterGrey, width: 1),
+                borderRadius: BorderRadius.circular(16)),
+        focusedErrorBorder: enabledBorder ??
+            OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.red, width: 1),
+                borderRadius: BorderRadius.circular(16)),
+        errorBorder: enabledBorder ??
+            OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.red, width: 1),
                 borderRadius: BorderRadius.circular(16)),
       ),
     );
