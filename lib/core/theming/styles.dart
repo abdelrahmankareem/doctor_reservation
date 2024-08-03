@@ -29,4 +29,6 @@ class TextStyles {
       fontWeight: FontWeight.w400);
   static TextStyle font11DarkBlue400Weight = TextStyle(
       fontSize: 11.sp, color: AppColors.darkBlue, fontWeight: FontWeight.w400);
+  static TextStyle font13DarkBlue500Weight = TextStyle(
+      fontSize: 13.sp, color: AppColors.darkBlue, fontWeight: FontWeight.w500);
 }
