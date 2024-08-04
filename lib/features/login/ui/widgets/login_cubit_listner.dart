@@ -32,6 +32,7 @@ class LoginCubitListener extends StatelessWidget {
             context.pushNamed(Routes.homeScreen);
           },
           faillure: (error) {
+            context.pop();
             setupErrorState(context, error);
           },
         );

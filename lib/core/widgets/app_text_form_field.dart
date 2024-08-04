@@ -36,8 +36,7 @@ class DocTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       validator: (value) {
-        validator(value);
-        return null;
+        return validator(value);
       },
       style: TextStyles.font14DarkBlue500Weight,
       obscureText: isObscureText ?? false,

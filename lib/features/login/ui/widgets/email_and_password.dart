@@ -57,7 +57,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           controller: context.read<LoginCubit>().emailController,
         ),
         SizedBox(
-          height: 16.h,
+          height: 18.h,
         ),
         DocTextFormField(
           controller: context.read<LoginCubit>().passwordController,
