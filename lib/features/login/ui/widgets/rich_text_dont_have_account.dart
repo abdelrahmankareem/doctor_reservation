@@ -1,6 +1,6 @@
-import 'package:doctor/core/helpers/navigation.dart';
-import 'package:doctor/core/routing/routes.dart';
-import 'package:doctor/core/theming/styles.dart';
+import '../../../../core/helpers/navigation.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

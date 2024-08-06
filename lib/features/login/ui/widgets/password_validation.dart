@@ -1,15 +1,15 @@
-import 'package:doctor/core/theming/colors.dart';
-import 'package:doctor/core/theming/styles.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PasswordValidation extends StatelessWidget {
+class PasswordValidations extends StatelessWidget {
   final bool hasLowerCase;
   final bool hasUpperCase;
   final bool hasDigits;
   final bool hasNumber;
   final bool hasMinLength;
-  const PasswordValidation({
+  const PasswordValidations({
     super.key,
     required this.hasLowerCase,
     required this.hasUpperCase,

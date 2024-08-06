@@ -1,4 +1,4 @@
-import 'package:doctor/features/onboarding/ui/widgets/logo_name_widget.dart';
+import 'logo_name_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

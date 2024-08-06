@@ -1,7 +1,7 @@
-import 'package:doctor/core/helpers/app_regex.dart';
-import 'package:doctor/core/widgets/app_text_form_field.dart';
-import 'package:doctor/features/login/manager/cubit/login_cubit.dart';
-import 'package:doctor/features/login/ui/widgets/password_validation.dart';
+import '../../../../core/helpers/app_regex.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
+import '../../manager/cubit/login_cubit.dart';
+import 'password_validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -83,7 +83,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         SizedBox(
           height: 24.h,
         ),
-        PasswordValidation(
+        PasswordValidations(
             hasLowerCase: hasLowerCase,
             hasUpperCase: hasUpperCase,
             hasDigits: hasDigits,
