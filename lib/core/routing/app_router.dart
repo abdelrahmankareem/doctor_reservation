@@ -1,10 +1,12 @@
-import 'package:doctor/core/di/dependency_injection.dart';
-import 'package:doctor/core/routing/routes.dart';
-import 'package:doctor/features/home/ui/home_screen.dart';
-import 'package:doctor/features/login/manager/cubit/login_cubit.dart';
-import 'package:doctor/features/login/ui/login_screen.dart';
-import 'package:doctor/features/onboarding/ui/onboarding.dart';
-import 'package:doctor/features/signup/ui/signup_screen.dart';
+import 'package:doctor/features/signup/manager/cubit/sign_up_cubit.dart';
+
+import '../di/dependency_injection.dart';
+import 'routes.dart';
+import '../../features/home/ui/home_screen.dart';
+import '../../features/login/manager/cubit/login_cubit.dart';
+import '../../features/login/ui/login_screen.dart';
+import '../../features/onboarding/ui/onboarding.dart';
+import '../../features/signup/ui/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,7 +25,10 @@ class AppRouter {
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(
-          builder: (context) => const SignUpScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<SignupCubit>(),
+            child: const SignUpScreen(),
+          ),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(

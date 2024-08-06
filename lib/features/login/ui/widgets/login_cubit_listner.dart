@@ -1,9 +1,9 @@
-import 'package:doctor/core/helpers/navigation.dart';
-import 'package:doctor/core/routing/routes.dart';
-import 'package:doctor/core/theming/colors.dart';
-import 'package:doctor/core/theming/styles.dart';
-import 'package:doctor/features/login/manager/cubit/login_cubit.dart';
-import 'package:doctor/features/login/manager/cubit/login_state.dart';
+import '../../../../core/helpers/navigation.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
+import '../../manager/cubit/login_cubit.dart';
+import '../../manager/cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

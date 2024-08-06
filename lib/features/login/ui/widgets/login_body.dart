@@ -1,8 +1,8 @@
-import 'package:doctor/core/theming/styles.dart';
+import '../../../../core/theming/styles.dart';
 
-import 'package:doctor/features/login/manager/cubit/login_cubit.dart';
-import 'package:doctor/features/login/ui/widgets/email_and_password.dart';
-import 'package:doctor/features/login/ui/widgets/login_cubit_listner.dart';
+import '../../manager/cubit/login_cubit.dart';
+import 'email_and_password.dart';
+import 'login_cubit_listner.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

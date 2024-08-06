@@ -1,5 +1,5 @@
-import 'package:doctor/features/login/data/login_repo.dart';
-import 'package:doctor/features/login/data/models/login_request_model.dart';
+import '../../data/login_repo.dart';
+import '../../data/models/login_request_model.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

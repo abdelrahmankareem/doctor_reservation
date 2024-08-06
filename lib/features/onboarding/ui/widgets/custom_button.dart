@@ -1,7 +1,7 @@
-import 'package:doctor/core/helpers/navigation.dart';
-import 'package:doctor/core/routing/routes.dart';
-import 'package:doctor/core/theming/colors.dart';
-import 'package:doctor/core/theming/styles.dart';
+import '../../../../core/helpers/navigation.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
