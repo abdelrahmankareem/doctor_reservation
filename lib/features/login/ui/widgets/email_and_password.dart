@@ -90,8 +90,8 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             hasNumber: hasNumber,
             hasMinLength: hasMinLength)
       ]),
-    );
-  }
+    ); n
+  } 
 
   @override
   void dispose() {
